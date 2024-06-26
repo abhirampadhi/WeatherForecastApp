@@ -33,6 +33,10 @@
     <ProjectReference Include="..\Euronext.Common\Euronext.WeatherForecastApp.Common.csproj" />
     <ProjectReference Include="..\Euronext.Domain\Euronext.WeatherForecastApp.Domain.csproj" />
     <ProjectReference Include="..\Euronext.Infrastructure\Euronext.WeatherForecastApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\Euronext.WeatherForecastApp.Application\Euronext.WeatherForecastApp.Application.csproj" />
+    <ProjectReference Include="..\Euronext.WeatherForecastApp.Common\Euronext.WeatherForecastApp.Common.csproj" />
+    <ProjectReference Include="..\Euronext.WeatherForecastApp.Domain\Euronext.WeatherForecastApp.Domain.csproj" />
+    <ProjectReference Include="..\Euronext.WeatherForecastApp.Infrastructure\Euronext.WeatherForecastApp.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

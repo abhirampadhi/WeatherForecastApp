@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Euronext.Application\Euronext.WeatherForecastApp.Application.csproj" />
+    <ProjectReference Include="..\..\src\Euronext.WeatherForecastApp.Application\Euronext.WeatherForecastApp.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Euronext.Common\Euronext.WeatherForecastApp.Common.csproj" />
     <ProjectReference Include="..\Euronext.Domain\Euronext.WeatherForecastApp.Domain.csproj" />
+    <ProjectReference Include="..\Euronext.WeatherForecastApp.Common\Euronext.WeatherForecastApp.Common.csproj" />
+    <ProjectReference Include="..\Euronext.WeatherForecastApp.Domain\Euronext.WeatherForecastApp.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
