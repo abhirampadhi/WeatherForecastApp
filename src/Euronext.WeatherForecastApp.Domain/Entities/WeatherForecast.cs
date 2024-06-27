@@ -2,7 +2,7 @@
 
 namespace Euronext.WeatherForecastAppDomain.Entities;
 
-public class WeatherForecast
+public sealed class WeatherForecast
 {
     [Key]
     public int Id { get; set; }

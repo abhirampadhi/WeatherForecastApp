@@ -8,6 +8,11 @@ public sealed class GetWeatherForecastsByDateQuery : IRequest<IEnumerable<Weathe
     public DateTime Date { get; }
     public GetWeatherForecastsByDateQuery(DateTime date)
     {
+        if (date == DateTime.MinValue)
+        {
+            throw new ArgumentException("Date cannot be default");
+        }
+
         Date = date;
     }
 }

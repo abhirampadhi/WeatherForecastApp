@@ -2,7 +2,6 @@
 using Euronext.WeatherForecastAppCommon.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
 using System.Net;
 using UnauthorizedAccessException = Euronext.WeatherForecastAppCommon.Exceptions.UnauthorizedAccessException;
 
