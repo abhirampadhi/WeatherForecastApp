@@ -17,7 +17,7 @@ using System.Net;
 namespace Euronext.WeatherForecastAppWebApi.Controllers;
 
 [ApiController]
-[Route("api/weatherForecast")]
+[Route("api/weatherForecasts/")]
 public class WeatherForecastController : ControllerBase
 {
     private readonly ILogger<WeatherForecastController> _logger;
@@ -36,13 +36,13 @@ public class WeatherForecastController : ControllerBase
 
     [HttpGet]
     [Authorize(Policy = "User")]
-    [SwaggerOperation("Get all weather forecasts")]
+    [SwaggerOperation("Get all weather forecasts.")]
     [ProducesResponseType(typeof(List<WeatherForecastResponseModel>), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(ErrorResponse))]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(ErrorResponse))]
     public async Task<IActionResult> GetAll()
     {
-        _logger.LogInformation("BEGIN: Get all weather forecasts");
+        _logger.LogInformation("BEGIN: Get all weather forecasts.");
 
         var forecasts = await _mediator.Send(new GetWeatherForecastsQuery());
 
@@ -51,19 +51,20 @@ public class WeatherForecastController : ControllerBase
             return NotFound();
         }
 
-        _logger.LogInformation("END: Get all weather forecasts");
+        _logger.LogInformation("END: Get all weather forecasts.");
         return Ok(forecasts);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet]
     [Authorize(Policy = "User")]
-    [SwaggerOperation("Get a specific weather forecast")]
+    [Route("{id}")]
+    [SwaggerOperation("Get a specific weather forecast.")]
     [ProducesResponseType(typeof(WeatherForecastResponseModel), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(ErrorResponse))]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(ErrorResponse))]
-    public async Task<IActionResult> GetById([Required][FromQuery] int id)
+    public async Task<IActionResult> GetById([Required][FromRoute] int id)
     {
-        _logger.LogInformation("BEGIN: Get a specific weather forecast");
+        _logger.LogInformation("BEGIN: Get a specific weather forecast.");
 
         var forecast = await _mediator.Send(new GetWeatherForecastByIdQuery(id));
 
@@ -72,19 +73,20 @@ public class WeatherForecastController : ControllerBase
             return NotFound();
         }
 
-        _logger.LogInformation("END: Get a specific weather forecast");
-        return Ok(forecast);
+        _logger.LogInformation("END: Get a specific weather forecast.");
+        return Ok(_mapper.Map<WeatherForecastResponseModel>(forecast));
     }
 
-    [HttpGet("{id}")]
+    [HttpGet]
     [Authorize(Policy = "User")]
-    [SwaggerOperation("Get weather forecast by date")]
-    [ProducesResponseType(typeof(WeatherForecastResponseModel), (int)HttpStatusCode.OK)]
+    [Route("date/{date}")]
+    [SwaggerOperation("Get the weather forecast for a date.")]
+    [ProducesResponseType(typeof(List<WeatherForecastResponseModel>), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(ErrorResponse))]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(ErrorResponse))]
-    public async Task<IActionResult> GetByDate([Required][FromQuery] DateTime date)
+    public async Task<IActionResult> GetByDate([Required][FromRoute] DateTime date)
     {
-        _logger.LogInformation("BEGIN: Get a specific weather forecast");
+        _logger.LogInformation("BEGIN: Get the weather forecast for a date.");
 
         var forecast = await _mediator.Send(new GetWeatherForecastsByDateQuery(date));
 
@@ -93,8 +95,8 @@ public class WeatherForecastController : ControllerBase
             return NotFound();
         }
 
-        _logger.LogInformation("END: Get a specific weather forecast");
-        return Ok(forecast);
+        _logger.LogInformation("END: Get the weather forecast for a date.");
+        return Ok(_mapper.Map<List<WeatherForecastResponseModel>>(forecast));
     }
 
     #endregion
@@ -103,7 +105,7 @@ public class WeatherForecastController : ControllerBase
 
     [HttpPost]
     [Authorize(Policy = "Admin")]
-    [SwaggerOperation("Add weather forecasts")]
+    [SwaggerOperation("Add weather forecasts (Admin role required).")]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(ErrorResponse))]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(ErrorResponse))]
@@ -124,13 +126,14 @@ public class WeatherForecastController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("{id}")]
+    [HttpPut]
     [Authorize(Policy = "Admin")]
-    [SwaggerOperation("Update an existing weather forecast")]
+    [Route("{id}")]
+    [SwaggerOperation("Update an existing weather forecast (Admin role required).")]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(ErrorResponse))]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(ErrorResponse))]
-    public async Task<IActionResult> Put([Required][FromQuery] int id, [FromBody] WeatherForecastRequestModel inputModel)
+    public async Task<IActionResult> Put([Required][FromRoute] int id, [FromBody] WeatherForecastRequestModel inputModel)
     {
         _logger.LogInformation("BEGIN: Create a Weather Forecast");
 
@@ -144,16 +147,17 @@ public class WeatherForecastController : ControllerBase
         await _mediator.Send(command);
 
         _logger.LogInformation("END:Create a Weather Forecast");
-        return NoContent();
+        return Ok();
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete]
     [Authorize(Policy = "Admin")]
-    [SwaggerOperation("Delete a weather forecast")]
+    [Route("{id}")]
+    [SwaggerOperation("Delete a weather forecast (Admin role required).")]
     [ProducesResponseType((int)HttpStatusCode.NoContent)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-    public async Task<IActionResult> Delete([Required][FromQuery] int id)
+    public async Task<IActionResult> Delete([Required][FromRoute] int id)
     {
         await _mediator.Send(new DeleteWeatherForecastCommand(id) { });
         return NoContent();
