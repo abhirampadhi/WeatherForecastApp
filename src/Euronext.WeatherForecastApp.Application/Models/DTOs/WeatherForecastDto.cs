@@ -1,5 +1,5 @@
 ﻿namespace Euronext.WeatherForecastApp.Application.Models.DTOs;
-public class WeatherForecastDto
+public sealed class WeatherForecastDto
 {
     public int Id { get; set; }
     public DateTime Date { get; set; }

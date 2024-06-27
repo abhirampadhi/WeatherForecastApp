@@ -1,6 +1,6 @@
 ﻿namespace Euronext.WeatherForecastApp.Application.Models.Responses;
 
-public class WeatherForecastResponseModel
+public sealed class WeatherForecastResponseModel
 {
     public int Id { get; set; }
     public DateTime Date { get; set; }

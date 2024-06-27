@@ -1,6 +1,6 @@
 ﻿namespace Euronext.WeatherForecastApp.Application.Models.Requests;
 
-public class WeatherForecastRequestModel
+public sealed class WeatherForecastRequestModel
 {
     public DateTime Date { get; set; }
     public int TemperatureC { get; set; }

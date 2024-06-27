@@ -2,6 +2,7 @@
 using Euronext.WeatherForecastApp.Application.Interfaces;
 using Euronext.WeatherForecastApp.Application.Models.DTOs;
 using Euronext.WeatherForecastApp.Application.Queries;
+using Euronext.WeatherForecastApp.Common.JwtWrapper;
 using Isopoh.Cryptography.Argon2;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -18,12 +19,15 @@ public class AuthService : IAuthService
     private readonly IMediator _mediator;
     private readonly IConfiguration _configuration;
     private readonly ILogger<AuthService> _logger;
+    private readonly IJwtTokenHandler _jwtTokenHandler;
 
-    public AuthService(IMediator mediator, IConfiguration configuration, ILogger<AuthService> logger)
+    public AuthService(IMediator mediator, IConfiguration configuration, 
+        ILogger<AuthService> logger, IJwtTokenHandler jwtTokenHandler)
     {
         _mediator = mediator;
         _configuration = configuration;
         _logger = logger;
+        _jwtTokenHandler = jwtTokenHandler;
     }
 
     public async Task<UserDto> LoginAsync(LoginUserDto loginUser)
@@ -66,8 +70,8 @@ public class AuthService : IAuthService
             };
 
             // Create token and set it to user
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            user.Token = tokenHandler.WriteToken(token);
+            var token = _jwtTokenHandler.CreateToken(tokenDescriptor);
+            user.Token = _jwtTokenHandler.WriteToken(token);
             user.IsActive = true;
 
             _logger.LogInformation("User {UserName} logged in successfully", loginUser.UserName);

@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Euronext.WeatherForecastApp.Application.Models.DTOs;
 
-namespace Euronext.WeatherForecastApp.Application.Models.DTOs;
-
-public class UserDto
+public sealed class UserDto
 {
     public string UserName { get; set; }
     public string Name { get; set; }

@@ -25,11 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Infrastructure", "src\Euronext.WeatherForecastApp.Infrastructure\Euronext.WeatherForecastApp.Infrastructure.csproj", "{6639A6FB-68DC-4F2A-AE2D-68F1579192A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Application.Tests", "tests\Euronext.WeatherForecastApp.Application.Test\Euronext.WeatherForecastApp.Application.Tests.csproj", "{7C48A8B3-FF70-4B5C-935C-8D49D0B1D9B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.Common.Tests", "tests\Euronext.WeatherForecastApp.Common\Euronext.WeatherForecastApp.Common.Tests.csproj", "{2B2A83FD-8FA1-4881-89CF-8D53E2EE1EBF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Domain.Tests", "tests\Euronext.WeatherForecastApp.Domain.Test\Euronext.WeatherForecastApp.Domain.Tests.csproj", "{1F39ED90-3561-43EF-828D-51ED91420FB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.Application.Tests", "tests\Euronext.WeatherForecastApp.Application.Tests\Euronext.WeatherForecastApp.Application.Tests.csproj", "{B422FAA4-42F1-429C-9435-A139BABB1849}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Infrastructure.Tests", "tests\Euronext.WeatherForecastApp.Infrastructure.Test\Euronext.WeatherForecastApp.Infrastructure.Tests.csproj", "{0C59B810-4EB7-4827-9232-1107A6BE34E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.Domain.Tests", "tests\Euronext.WeatherForecastApp.Domain.Tests\Euronext.WeatherForecastApp.Domain.Tests.csproj", "{B583C7E2-9DFE-4525-8D50-D02E08839758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.Infrastructure.Tests", "tests\Euronext.WeatherForecastApp.Infrastructure.Tests\Euronext.WeatherForecastApp.Infrastructure.Tests.csproj", "{EBBFC5E7-8848-4FDC-87E3-D2E4A8DE13AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.WebApi.Tests", "tests\Euronext.WeatherForecastApp.WebApi\Euronext.WeatherForecastApp.WebApi.Tests.csproj", "{AE6F806E-AE08-451F-A71B-187DDB457C73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,18 +61,26 @@ Global
 		{6639A6FB-68DC-4F2A-AE2D-68F1579192A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6639A6FB-68DC-4F2A-AE2D-68F1579192A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6639A6FB-68DC-4F2A-AE2D-68F1579192A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C48A8B3-FF70-4B5C-935C-8D49D0B1D9B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C48A8B3-FF70-4B5C-935C-8D49D0B1D9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C48A8B3-FF70-4B5C-935C-8D49D0B1D9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C48A8B3-FF70-4B5C-935C-8D49D0B1D9B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F39ED90-3561-43EF-828D-51ED91420FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F39ED90-3561-43EF-828D-51ED91420FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F39ED90-3561-43EF-828D-51ED91420FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F39ED90-3561-43EF-828D-51ED91420FB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C59B810-4EB7-4827-9232-1107A6BE34E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C59B810-4EB7-4827-9232-1107A6BE34E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C59B810-4EB7-4827-9232-1107A6BE34E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C59B810-4EB7-4827-9232-1107A6BE34E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B2A83FD-8FA1-4881-89CF-8D53E2EE1EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2A83FD-8FA1-4881-89CF-8D53E2EE1EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2A83FD-8FA1-4881-89CF-8D53E2EE1EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2A83FD-8FA1-4881-89CF-8D53E2EE1EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B422FAA4-42F1-429C-9435-A139BABB1849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B422FAA4-42F1-429C-9435-A139BABB1849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B422FAA4-42F1-429C-9435-A139BABB1849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B422FAA4-42F1-429C-9435-A139BABB1849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B583C7E2-9DFE-4525-8D50-D02E08839758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B583C7E2-9DFE-4525-8D50-D02E08839758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B583C7E2-9DFE-4525-8D50-D02E08839758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B583C7E2-9DFE-4525-8D50-D02E08839758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBBFC5E7-8848-4FDC-87E3-D2E4A8DE13AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBFC5E7-8848-4FDC-87E3-D2E4A8DE13AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBFC5E7-8848-4FDC-87E3-D2E4A8DE13AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBFC5E7-8848-4FDC-87E3-D2E4A8DE13AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,9 +95,11 @@ Global
 		{6D1C8CC6-64A8-4D22-BC08-548ABBCB8DB1} = {B9AB5365-6DA8-4BA2-8AEC-F75624B92745}
 		{89F24A51-E177-4E7C-A7A7-E111FCB951E2} = {B9AB5365-6DA8-4BA2-8AEC-F75624B92745}
 		{6639A6FB-68DC-4F2A-AE2D-68F1579192A9} = {E4F8EC22-75B4-43D0-BDCE-31BA382D2774}
-		{7C48A8B3-FF70-4B5C-935C-8D49D0B1D9B2} = {470401B8-76C0-4686-A8FE-B98E460526C5}
-		{1F39ED90-3561-43EF-828D-51ED91420FB7} = {470401B8-76C0-4686-A8FE-B98E460526C5}
-		{0C59B810-4EB7-4827-9232-1107A6BE34E0} = {470401B8-76C0-4686-A8FE-B98E460526C5}
+		{2B2A83FD-8FA1-4881-89CF-8D53E2EE1EBF} = {470401B8-76C0-4686-A8FE-B98E460526C5}
+		{B422FAA4-42F1-429C-9435-A139BABB1849} = {470401B8-76C0-4686-A8FE-B98E460526C5}
+		{B583C7E2-9DFE-4525-8D50-D02E08839758} = {470401B8-76C0-4686-A8FE-B98E460526C5}
+		{EBBFC5E7-8848-4FDC-87E3-D2E4A8DE13AD} = {470401B8-76C0-4686-A8FE-B98E460526C5}
+		{AE6F806E-AE08-451F-A71B-187DDB457C73} = {470401B8-76C0-4686-A8FE-B98E460526C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D0999DBD-9980-4C46-8618-E8042003DA86}

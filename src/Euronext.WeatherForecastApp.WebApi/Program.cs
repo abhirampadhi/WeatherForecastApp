@@ -1,15 +1,11 @@
 using Euronext.WeatherForecastApp.Application;
+using Euronext.WeatherForecastApp.Common;
 using Euronext.WeatherForecastApp.Infrastructure;
 using Euronext.WeatherForecastApp.WebApi.Extensions;
 using Euronext.WeatherForecastAppWebApi.Extensions;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Events;
 using Serilog.Formatting.Compact;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +36,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplicationConfigureServices();
 builder.Services.AddInfrastructureConfigureServices();
+builder.Services.AddCommonConfigureServices();  
 builder.Services.AddApiService();  
 builder.Services.AddSwaggerDocumentation();  
 
