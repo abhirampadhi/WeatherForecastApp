@@ -65,17 +65,37 @@ public class WeatherForecastController : ControllerBase
     {
         _logger.LogInformation("BEGIN: Get a specific weather forecast");
 
-        var forecasts = await _mediator.Send(new GetWeatherForecastsQuery());
+        var forecast = await _mediator.Send(new GetWeatherForecastByIdQuery(id));
 
-        if (forecasts is null)
+        if (forecast is null)
         {
             return NotFound();
         }
 
         _logger.LogInformation("END: Get a specific weather forecast");
-        return Ok(forecasts);
+        return Ok(forecast);
     }
 
+    [HttpGet("{id}")]
+    [Authorize(Policy = "User")]
+    [SwaggerOperation("Get weather forecast by date")]
+    [ProducesResponseType(typeof(WeatherForecastResponseModel), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(ErrorResponse))]
+    [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(ErrorResponse))]
+    public async Task<IActionResult> GetByDate([Required][FromQuery] DateTime date)
+    {
+        _logger.LogInformation("BEGIN: Get a specific weather forecast");
+
+        var forecast = await _mediator.Send(new GetWeatherForecastsByDateQuery(date));
+
+        if (forecast is null)
+        {
+            return NotFound();
+        }
+
+        _logger.LogInformation("END: Get a specific weather forecast");
+        return Ok(forecast);
+    }
 
     #endregion
 
