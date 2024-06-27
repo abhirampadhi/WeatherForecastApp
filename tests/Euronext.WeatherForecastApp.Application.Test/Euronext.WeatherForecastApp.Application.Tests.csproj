@@ -27,4 +27,8 @@
     <ProjectReference Include="..\..\src\Euronext.WeatherForecastApp.Application\Euronext.WeatherForecastApp.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
