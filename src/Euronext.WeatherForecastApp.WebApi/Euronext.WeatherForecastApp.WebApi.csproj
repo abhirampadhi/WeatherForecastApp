@@ -29,9 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Euronext.Application\Euronext.WeatherForecastApp.Application.csproj" />
     <ProjectReference Include="..\Euronext.Common\Euronext.WeatherForecastApp.Common.csproj" />
-    <ProjectReference Include="..\Euronext.Domain\Euronext.WeatherForecastApp.Domain.csproj" />
     <ProjectReference Include="..\Euronext.Infrastructure\Euronext.WeatherForecastApp.Infrastructure.csproj" />
     <ProjectReference Include="..\Euronext.WeatherForecastApp.Application\Euronext.WeatherForecastApp.Application.csproj" />
     <ProjectReference Include="..\Euronext.WeatherForecastApp.Common\Euronext.WeatherForecastApp.Common.csproj" />

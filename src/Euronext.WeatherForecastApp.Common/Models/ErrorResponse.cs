@@ -5,7 +5,7 @@ public class ErrorResponse
     public string Message { get; set; }
     public string Details { get; set; }
 
-    public ErrorResponse(int statusCode, string message, string details = null)
+    public ErrorResponse(int statusCode, string message, string details)
     {
         StatusCode = statusCode;
         Message = message;
