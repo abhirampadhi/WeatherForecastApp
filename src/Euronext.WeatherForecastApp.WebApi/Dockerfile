@@ -3,24 +3,25 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy the project files and restore any dependencies
-COPY ./src/WeatherForecastApp.Api/WeatherForecastApp.Api.csproj ./WeatherForecastApp.Api/
-COPY ./src/WeatherForecastApp.Application/WeatherForecastApp.Application.csproj ./WeatherForecastApp.Application/
-COPY ./src/WeatherForecastApp.Domain/WeatherForecastApp.Domain.csproj ./WeatherForecastApp.Domain/
-COPY ./src/WeatherForecastApp.Infrastructure/WeatherForecastApp.Infrastructure.csproj ./WeatherForecastApp.Infrastructure/
+COPY .src/Euronext.WeatherForecastApp.WebApi\Euronext.WeatherForecastApp.WebApi.csproj ./Euronext.WeatherForecastApp.WebApi/
+COPY .src/Euronext.WeatherForecastApp.Application\Euronext.WeatherForecastApp.Application.csproj ./Euronext.WeatherForecastApp.Application
+COPY .src/Euronext.WeatherForecastApp.Application\Euronext.WeatherForecastApp.Common.csproj ./Euronext.WeatherForecastApp.Common
+COPY .src/Euronext.WeatherForecastApp.Application\Euronext.WeatherForecastApp.Domain.csproj ./Euronext.WeatherForecastApp.Domain
+COPY .src/Euronext.WeatherForecastApp.Application\Euronext.WeatherForecastApp.Infrastructure.csproj ./Euronext.WeatherForecastApp.Infrastructure
 
-RUN dotnet restore ./WeatherForecastApp.Api/WeatherForecastApp.Api.csproj
+RUN dotnet restore ./Euronext.WeatherForecastApp.WebApi/Euronext.WeatherForecastApp.WebApi.csproj
 
 # Copy the remaining files and build the app
 COPY ./src/ .
-RUN dotnet build ./WeatherForecastApp.Api/WeatherForecastApp.Api.csproj -c Release -o /app/build
+RUN dotnet build ./Euronext.WeatherForecastApp.WebApi/Euronext.WeatherForecastApp.WebApi.csproj -c Release -o /app/build
 
 # Publish the app to a folder in the container
-RUN dotnet publish ./WeatherForecastApp.Api/WeatherForecastApp.Api.csproj -c Release -o /app/publish
+RUN dotnet publish ./Euronext.WeatherForecastApp.WebApi/Euronext.WeatherForecastApp.WebApi.csproj -c Release -o /app/publish
 
 # Use the official .NET runtime image to run the app
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
 
 # Run the app
-ENTRYPOINT ["dotnet", "WeatherForecastApp.Api.dll"]
+ENTRYPOINT ["dotnet", "Euronext.WeatherForecas.Api.dll"]
