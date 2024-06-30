@@ -1,17 +1,15 @@
-## Steps to Setup
+### Steps to Setup
 
 - Clone the repository and enter the directory
 - Run the command `dotnet restore`
 - Run the command `dotnet run`
 
-
-
-### Yo need to generate a Bearer token to access Weather forcast API
+### You need to generate a Bearer token to access Weather forcast APIs
 Step- 1: Register a user (use sample request)
 
-* POST `/auth/register`
+* POST `api/auth/register`
 
-    * Adds the user's details to the database and returns the JWT token along with the user information after the user enters their information.
+    * Register user's details to the in memory database and returns the JWT token along with the user information after the user enters their information.
     * Post Http Request Link: `https://<YOUR-DOMAIN:PORT>/auth/register`
     * Request Body Example:
 
@@ -43,7 +41,7 @@ Step- 1: Register a user (use sample request)
         }
         ```
 Step- 2
-* POST `/auth/login`
+* POST `api/auth/login`
 
   
     
@@ -76,10 +74,7 @@ Step- 2
 
 
 
-
-
-  * Returns claims from the JWT sent as the **Bearer token** in the `Authorization` header with **User** role.
-    * Get Http Request Link: `https://<YOUR-DOMAIN:PORT>/auth/usertest`
+    * Returns claims from the JWT sent as the **Bearer token** in the `Authorization` header with **User** role.
     * Request Header Example:
 
         ```
@@ -87,19 +82,10 @@ Step- 2
         ```
 
 
-# Docker-compose commands
+### Docker-compose commands
 Build and run the Docker containers using Docker Compose: docker-compose up --build
 Docker Logs: docker-compose logs
 Container Status: docker ps
-
-
-
-
-
-
-
-
-
 
 
 # Onion Architecture / Clean Architecture
@@ -109,31 +95,20 @@ Container Status: docker ps
 - The core of the application is the domain layer.
 - Provide more testability than N-layered architecture.
 
-## Layers
-### Domain Layer:
-
-This layer does not depend on any other layer. This layer contains entities, enums, specifications etc.  
-Add repository and unit of work contracts in this layer.
-### Application Layer:
-
+### Layers
+## Domain Layer:
+This layer does not depend on any other layer. This layer contains entities, enums, specifications etc. 
+## Application Layer:
 This layer contains business logic, services, service interfaces, request and response models.  
-Third party service interfaces are also defined in this layer.  
 This layer depends on domain layer.  
-### Infrastructure Layer:
-
-This layer contains database related logic (Repositories and DbContext), and third party library implementation (like logger and email service).  
+## Infrastructure Layer:
+This layer contains database related logic (Repositories and DbContext), and third party library implementation.  
 This implementation is based on domain and application layer.
-### Presentation Layer:
-
+## Presentation Layer:
 This layer contains Webapi or UI.
+## Domain model
 
-# Domain model
-
-Domain model are of 2 types
-
-
-## Validations in Domain driven design:
-
+## Validations :
 
 
 ### Technologies Used:
@@ -141,10 +116,9 @@ Domain model are of 2 types
 - .Net 8
 - Rest API
 - Entity Framework
-- NLog
+- NLog, SeriLog
 - Swagger
 - Xunit
 - Moq
-- Generic Repository Pattern
-- Specification pattern
+- MediatR
 
