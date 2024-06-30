@@ -1,10 +1,8 @@
-﻿version: '3.4'
+version: '3.4'
 
 services:
-  weatherforecastapp:
-    image: weatherforecastapp
+  euronext.weatherforecastapp.webapi:
+    image: ${DOCKER_REGISTRY-}euronextweatherforecastappwebapi
     build:
       context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:80"
+      dockerfile: src/Euronext.WeatherForecastApp.WebApi/Dockerfile

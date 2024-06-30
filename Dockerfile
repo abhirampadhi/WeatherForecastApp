@@ -25,5 +25,3 @@ COPY --from=build /app/publish .
 
 # Run the app
 ENTRYPOINT ["dotnet", "Euronext.WeatherForecastApp.WebApi.dll"]
-
-

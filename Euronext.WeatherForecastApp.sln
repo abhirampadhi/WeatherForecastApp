@@ -25,15 +25,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Infrastructure", "src\Euronext.WeatherForecastApp.Infrastructure\Euronext.WeatherForecastApp.Infrastructure.csproj", "{6639A6FB-68DC-4F2A-AE2D-68F1579192A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.Common.Tests", "tests\Euronext.WeatherForecastApp.Common\Euronext.WeatherForecastApp.Common.Tests.csproj", "{2B2A83FD-8FA1-4881-89CF-8D53E2EE1EBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Common.Tests", "tests\Euronext.WeatherForecastApp.Common\Euronext.WeatherForecastApp.Common.Tests.csproj", "{2B2A83FD-8FA1-4881-89CF-8D53E2EE1EBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.Application.Tests", "tests\Euronext.WeatherForecastApp.Application.Tests\Euronext.WeatherForecastApp.Application.Tests.csproj", "{B422FAA4-42F1-429C-9435-A139BABB1849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Application.Tests", "tests\Euronext.WeatherForecastApp.Application.Tests\Euronext.WeatherForecastApp.Application.Tests.csproj", "{B422FAA4-42F1-429C-9435-A139BABB1849}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.Domain.Tests", "tests\Euronext.WeatherForecastApp.Domain.Tests\Euronext.WeatherForecastApp.Domain.Tests.csproj", "{B583C7E2-9DFE-4525-8D50-D02E08839758}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Domain.Tests", "tests\Euronext.WeatherForecastApp.Domain.Tests\Euronext.WeatherForecastApp.Domain.Tests.csproj", "{B583C7E2-9DFE-4525-8D50-D02E08839758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.Infrastructure.Tests", "tests\Euronext.WeatherForecastApp.Infrastructure.Tests\Euronext.WeatherForecastApp.Infrastructure.Tests.csproj", "{EBBFC5E7-8848-4FDC-87E3-D2E4A8DE13AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.Infrastructure.Tests", "tests\Euronext.WeatherForecastApp.Infrastructure.Tests\Euronext.WeatherForecastApp.Infrastructure.Tests.csproj", "{EBBFC5E7-8848-4FDC-87E3-D2E4A8DE13AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Euronext.WeatherForecastApp.WebApi.Tests", "tests\Euronext.WeatherForecastApp.WebApi\Euronext.WeatherForecastApp.WebApi.Tests.csproj", "{AE6F806E-AE08-451F-A71B-187DDB457C73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.WebApi.Tests", "tests\Euronext.WeatherForecastApp.WebApi\Euronext.WeatherForecastApp.WebApi.Tests.csproj", "{AE6F806E-AE08-451F-A71B-187DDB457C73}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
