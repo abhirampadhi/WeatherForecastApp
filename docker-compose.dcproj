@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>67959db6-afae-4a0d-b5c0-4dd7dfd6e4ec</ProjectGuid>
+    <ProjectGuid>06cdd338-e326-456c-95dc-4ca7e0acd4a9</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>euronext.weatherforecastapp.webapi</DockerServiceName>

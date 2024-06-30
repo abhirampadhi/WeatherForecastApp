@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Euronext.WeatherForecastApp.WebApi.Tests", "tests\Euronext.WeatherForecastApp.WebApi\Euronext.WeatherForecastApp.WebApi.Tests.csproj", "{AE6F806E-AE08-451F-A71B-187DDB457C73}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{06CDD338-E326-456C-95DC-4CA7E0ACD4A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,10 +83,10 @@ Global
 		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE6F806E-AE08-451F-A71B-187DDB457C73}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67959DB6-AFAE-4A0D-B5C0-4DD7DFD6E4EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CDD338-E326-456C-95DC-4CA7E0ACD4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CDD338-E326-456C-95DC-4CA7E0ACD4A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CDD338-E326-456C-95DC-4CA7E0ACD4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CDD338-E326-456C-95DC-4CA7E0ACD4A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
